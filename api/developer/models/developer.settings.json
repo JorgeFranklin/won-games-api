@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "developers",
+  "info": {
+    "name": "developer",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "required": true,
+      "targetField": "name"
+    },
+    "games": {
+      "via": "developers",
+      "collection": "game"
+    }
+  }
+}
